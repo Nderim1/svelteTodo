@@ -6,10 +6,7 @@
   let todoToEdit = "";
   let todoToEditIndex = "";
 
-  let allTodos = [
-    { title: "Hello there my todo" },
-    { title: "What is going on today my nice todo app" },
-  ];
+  let allTodos = [];
 
   const updateLSTodos = (todos) => {
     localStorage.setItem("todos", JSON.stringify(todos));

@@ -9,17 +9,21 @@
 
 <div id="showTodosContainer">
   <div id="flexContainer">
-    {#each allTodos as todo, index}
-      {#if todo.title.length}
-        <BuildTodo
-          key={index}
-          todoToDisplay={todo}
-          onCheckboxCheck={(status) => handleOnCheckboxCheck(index, status)}
-          handleOnEditTodo={() => editTodo(index)}
-          removeTodo={() => removeTodo(index)}
-        /><br />
-      {/if}
-    {/each}
+    {#if allTodos.length}
+      {#each allTodos as todo, index}
+        {#if todo.title.length}
+          <BuildTodo
+            key={index}
+            todoToDisplay={todo}
+            onCheckboxCheck={(status) => handleOnCheckboxCheck(index, status)}
+            handleOnEditTodo={() => editTodo(index)}
+            removeTodo={() => removeTodo(index)}
+          /><br />
+        {/if}
+      {/each}
+    {:else}
+      <span>You have no TODOs at the moment!</span>
+    {/if}
   </div>
 </div>
 
